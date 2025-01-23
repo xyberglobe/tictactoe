@@ -1,0 +1,136 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body with dynamic gradient background */
+/* Body with enhanced gradient background */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: linear-gradient(135deg, rgba(255, 106, 0, 0.8), rgba(238, 9, 121, 0.8)); /* Initial gradient with opacity */
+    background-size: 400% 400%; /* Make the gradient larger */
+    animation: gradientBackground 20s ease infinite; /* Animation for dynamic gradient */
+}
+
+/* Enhanced gradient animation */
+@keyframes gradientBackground {
+    0% {
+        background: linear-gradient(135deg, rgba(255, 106, 0, 0.8), rgba(238, 9, 121, 0.8));
+    }
+    25% {
+        background: linear-gradient(135deg, rgba(106, 17, 203, 0.8), rgba(37, 117, 252, 0.8));
+    }
+    50% {
+        background: linear-gradient(135deg, rgba(255, 126, 95, 0.8), rgba(254, 180, 123, 0.8));
+    }
+    75% {
+        background: linear-gradient(135deg, rgba(142, 45, 226, 0.8), rgba(74, 0, 224, 0.8));
+    }
+    100% {
+        background: linear-gradient(135deg, rgba(255, 106, 0, 0.8), rgba(238, 9, 121, 0.8));
+    }
+}
+
+/* Container for the game board */
+#game-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Title styling */
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Grid layout for the Tic-Tac-Toe board */
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+/* Cell styling */
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #e7e7e7, #f1f1f1); /* Gradient for cells */
+    border: 2px solid #fff;
+    font-size: 36px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s ease;
+}
+
+/* Hover effect on cells */
+.cell:hover {
+    background: linear-gradient(135deg, #ffd700, #ff6347); /* Gold to red gradient on hover */
+    transform: scale(1.1);
+}
+
+/* Player X and O colors */
+.cell.x {
+    color: #ff6f61; /* Red color for X */
+}
+
+.cell.o {
+    color: #2ed573; /* Green color for O */
+}
+
+/* Status and restart button styling */
+#status {
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+#game-status {
+    margin-bottom: 10px;
+}
+
+#restart-button {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #2ed573, #1eae5d); /* Green gradient for the button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hover effect on restart button */
+#restart-button:hover {
+    background: linear-gradient(135deg, #1eae5d, #2ed573);
+    transform: scale(1.05);
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 600px) {
+    #board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 28px;
+    }
+}
